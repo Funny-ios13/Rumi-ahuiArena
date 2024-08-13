@@ -158,8 +158,8 @@
 
         // Ejemplo de cómo llamar a la función para mostrar un anuncio temporal
         setTimeout(() => {
-            showTemporaryAnnouncement(placeholder1, 'https://i.imgur.com/lU4Zh9f.png', 'TIAGO PZK | GOTIA TOUR', '19 de Septiembre, 2024', '9:00 PM', '$50');
-            //showTemporaryAnnouncement(placeholder2, 'https://via.placeholder.com/150', 'Evento Temporal 2', '30 de Junio, 2024', '6:00 PM', '$45');
+            showTemporaryAnnouncement(placeholder1, 'https://i.imgur.com/lU4Zh9f.png', 'TIAGO PZK | GOTIA TOUR', '18 de Septiembre, 2024', '9:00 PM', '$50');
+            showTemporaryAnnouncement(placeholder2, 'https://i.imgur.com/4X2zcL7.png', 'FEID | FERXXOCALIPSIS TOUR', '10 de Septiembre, 2024', '5:00 PM', '$150');
         }, 1); // Mostrar anuncios temporales después de 2 segundos
 
         // Añadir event listener para el clic en el anuncio temporal
@@ -169,7 +169,7 @@
         });
 
         placeholder2.addEventListener('click', () => {
-            alert('Anuncio Temporal 2 fue clicado');
+            window.location.href = "./feid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
     </script>
