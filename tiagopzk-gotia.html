@@ -157,22 +157,38 @@
         </div>
 
     </div>
+    
 
     <footer>
         <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
     </footer>
 
     <script>
+        let myWindow;
+        const purchaseEnabled = true
+
+    function openWin() {
+        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=50&description=RUMIÑAHUI-ARENA_tiagopzk", "_blank", "width=700, height=700");
+    }
+
+    function closeWin() {
+        myWindow.close();
+        }
        const buyBankPatata = document.getElementById("but-buy");
        const back = document.getElementById("but-back");
         // Añadir event listener para el clic en el anuncio temporal
         
         buyBankPatata.addEventListener('click', () => {
-            alert("Este evento aún no puede ser reservado");
+            if (window.closed === false) {
+                openWin()
+            } else {
+                closeWin()
+            }
+
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
         back.addEventListener('click', () => {
-            window.location.href = "index.html?#"
+            window.location.href = "./Rumiñahui Arena.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
 
