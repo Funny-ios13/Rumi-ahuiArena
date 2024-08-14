@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #120318, #240530);
+    color: white;
+}
+
+header {
+    width: 100%;
+    background-color: black; /* Más impacto visual para el logo */
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.logo-header {
+    width: 30%; /* Ajuste para que el logo sea más estrecho y cubra el encabezado */
+    height: 180px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.announcement {
+    display: flex;
+    flex-direction: row; /* Cambia de columna a fila */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: start; /* Alinea los elementos al inicio del contenedor */
+    padding: 20px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%; /* Ajusta según el tamaño deseado */
+}
+
+.announcement img {
+    width: 30%; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.announcement-details {
+    flex: 1; /* Ocupa el espacio restante */
+    
+}
+
+.announcement:hover {
+   
+    background: rgba(255, 255, 255, 0.242);; /* Fondo semi-transparente */
+}
+
+
+.announcement h2, .announcement p, .announcement .price {
+    margin: 5px 0;
+}
+
+
+.announcement .price {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.announcement-buy {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.announcement-buy:hover {
+    background-color: #45a049;
+}
+
+.announcement-back {
+    padding: 8px 16px;
+    background-color: #cd2f2f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.announcement-back:hover {
+    background-color: #a72626b9;
+}
+
+/*footer {
+    text-align: center;
+    padding: 0px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+*/
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    .announcement {
+        width: 90%; /* Más adaptable a pantallas más pequeñas */
+    }
+}

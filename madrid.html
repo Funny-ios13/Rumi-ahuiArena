@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumiñahui Arena</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo2.png" class="logo-header">
+    </header>
+
+    <div class="container announcement-container">
+        
+        <div class="announcement">
+            <img src="images/final.png">
+            <div class="announcement-details">
+                <h2>UEFA SUPER CUP - FINAL | RMA vs ATL</h2>
+                <p>Fecha: 14 de Agosto, 2024</p>
+                <p>Hora: 2:00 PM</p>
+                <p class="price">Precio: $299.99</p>
+                
+                <hr>
+                <br>
+                <p>UEFA Super Cup - Final<br><i>Thanks to: <b>BankPatata</b></i></p>
+                <button class="announcement-buy" id="but-buy">
+                    Comprar con BankPatata
+                </button>
+                <button class="announcement-back" id="but-back">
+                    Volver
+                </button>
+            </div>
+        </div>
+
+        <!--<div class="announcement-buy" id="but-buy">
+            <div class="announcement-details">
+                <h2>Comprar con BankPatata</h2>
+            </div>
+        </div>
+        
+
+        <div class="announcement-back" id="but-back">
+            <div class="announcement-details">
+                <h2>Volver</h2>
+            </div>
+        -->
+        </div>
+
+    </div>
+    
+
+ <!--
+    <footer>
+        <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
+    </footer>
+-->
+
+    <script>
+        let myWindow;
+
+    function openWin() {
+        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=299.99&description=UEFA Super Cup - RMA vs ATL", "_blank", "width=700, height=700");
+    }
+
+    function closeWin() {
+        myWindow.close();
+        }
+       const buyBankPatata = document.getElementById("but-buy");
+       const back = document.getElementById("but-back");
+       let allowed = "true"
+        // Añadir event listener para el clic en el anuncio temporal
+        
+        buyBankPatata.addEventListener('click', () => {
+            /*if (window.closed === false) {
+                openWin()
+            } else {
+                closeWin()
+            }*/
+           if (allowed == "true") {
+            openWin()
+            allowed = "false"
+           } else {
+            if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
+                closeWin()
+                allowed = "true"
+            } else {
+                return;
+            }
+           }
+
+            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+        });
+        back.addEventListener('click', () => {
+            window.location.href = "./index.html"
+            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+        });
+
+        
+    </script>
+</body>
+</html>
