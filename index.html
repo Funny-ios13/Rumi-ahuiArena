@@ -4,107 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rumiñahui Arena</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://img.freepik.com/free-vector/digital-technology-background-with-abstract-wave-border_53876-117508.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1717804800&semt=ais_user') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            color: #fff; /* Cambia el color del texto para que sea legible sobre la imagen de fondo */
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-        }
-        header img {
-            width: 100px; /* Ajusta el tamaño según tus necesidades */
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para mejor legibilidad */
-            border-radius: 15px;
-        }
-        .announcement-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .announcement {
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            max-width: 1000px;
-            width: 100%;
-            cursor: pointer; /* Cambia el cursor a pointer */
-        }
-        .announcement img {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            object-fit: cover;
-            margin-right: 20px;
-        }
-        .announcement-details {
-            flex: 1;
-        }
-        .announcement h2 {
-            margin: 0;
-            font-size: 1.5em;
-            color: #fff;
-        }
-        .announcement p {
-            margin: 5px 0;
-            color: #ccc;
-        }
-        .announcement .price {
-            font-size: 1.2em;
-            color: #e74c3c;
-        }
-        .hidden {
-            display: none;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="https://i.imgur.com/k0ichgc.png">
-        <h1>Rumiñahui Arena</h1>
-        <p>Tu destino para los mejores eventos</p>
+        <img src="images/logo2.png" class="logo-header">
     </header>
 
-    <div class="container announcement-container">
+    <div class="container announcement-container homepage">
+    <div class="container">
         <!--
         <div class="announcement">
             <img src="https://via.placeholder.com/150" alt="Evento 1">
@@ -129,18 +37,22 @@
         <!-- Espacios invisibles para anuncios temporales -->
         <div id="announcement-placeholder-1" class="announcement hidden"></div>
         <div id="announcement-placeholder-2" class="announcement hidden"></div>
-
+        <div id="announcement-placeholder-3" class="announcement hidden"></div>
         
     </div>
-
+</div>
+    <!--
     <footer>
         <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
     </footer>
+-->
+
 
     <script>
         // JavaScript para manejar anuncios temporales
         const placeholder1 = document.getElementById('announcement-placeholder-1');
         const placeholder2 = document.getElementById('announcement-placeholder-2');
+        const placeholder3 = document.getElementById('announcement-placeholder-3');
 
         // Función para mostrar un anuncio temporal
         function showTemporaryAnnouncement(placeholder, imgSrc, name, date, time, price) {
@@ -158,8 +70,9 @@
 
         // Ejemplo de cómo llamar a la función para mostrar un anuncio temporal
         setTimeout(() => {
-            showTemporaryAnnouncement(placeholder1, 'https://i.imgur.com/lU4Zh9f.png', 'TIAGO PZK | GOTIA TOUR', '18 de Septiembre, 2024', '9:00 PM', '$50');
-            showTemporaryAnnouncement(placeholder2, 'https://i.imgur.com/4X2zcL7.png', 'FEID | FERXXOCALIPSIS TOUR', '10 de Septiembre, 2024', '5:00 PM', '$150');
+            showTemporaryAnnouncement(placeholder1, 'images/tiago.png', 'TIAGO PZK | GOTIA TOUR', '18 de Septiembre, 2024', '9:00 PM', '$50');
+            showTemporaryAnnouncement(placeholder2, 'images/feid.png', 'FEID | FERXXOCALIPSIS TOUR', '10 de Septiembre, 2024', '5:00 PM', '$150');
+            showTemporaryAnnouncement(placeholder3, 'images/final.png', 'UEFA Super Cup - Final', '14 de Agosto, 2024', '2:00 PM', '$299.99');
         }, 1); // Mostrar anuncios temporales después de 2 segundos
 
         // Añadir event listener para el clic en el anuncio temporal
@@ -170,6 +83,10 @@
 
         placeholder2.addEventListener('click', () => {
             window.location.href = "./feid.html"
+            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+        });
+        placeholder3.addEventListener('click', () => {
+            window.location.href = "./madrid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
     </script>
