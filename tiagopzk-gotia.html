@@ -4,134 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rumiñahui Arena</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://img.freepik.com/free-vector/digital-technology-background-with-abstract-wave-border_53876-117508.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1717804800&semt=ais_user') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            color: #fff; /* Cambia el color del texto para que sea legible sobre la imagen de fondo */
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-        }
-        header img {
-            width: 100px; /* Ajusta el tamaño según tus necesidades */
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para mejor legibilidad */
-            border-radius: 15px;
-        }
-        .announcement-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .announcement {
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            max-width: 1000px;
-            width: 100%;
-        }
-        .announcement-buy {
-            background: rgba(0, 17, 255, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            max-width: 1000px;
-            width: 25%;
-            cursor: pointer;
-        }
-        .announcement-back {
-            background: rgba(255, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-           
-            margin: 10px 0;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            max-width: 1000px;
-            width: 6%;
-        }
-        .announcement img {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            object-fit: cover;
-            margin-right: 20px;
-        }
-        .announcement-details {
-            flex: 1;
-        }
-        .announcement h2 {
-            margin: 0;
-            font-size: 1.5em;
-            color: #fff;
-        }
-        .announcement p {
-            margin: 5px 0;
-            color: #ccc;
-        }
-        .announcement .price {
-            font-size: 1.2em;
-            color: #e74c3c;
-        }
-        .hidden {
-            display: none;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="https://i.imgur.com/k0ichgc.png">
-        <h1>Rumiñahui Arena</h1>
-        <p>Tu destino para los mejores eventos</p>
+        <img src="images/logo2.png" class="logo-header">
     </header>
 
     <div class="container announcement-container">
         
         <div class="announcement">
-            <img src="https://i.imgur.com/lU4Zh9f.png">
+            <img src="images/tiago.png">
             <div class="announcement-details">
                 <h2>TIAGO PZK | GOTIA TOUR</h2>
                 <p>Fecha: 19 de Septiembre, 2024</p>
@@ -141,34 +24,26 @@
                 <hr>
                 <br>
                 <p>Tiago PZK se acaba de embarcar en su primera gira mundial y <b>Medellín</b>, Patata Country es parte de su itinerario. Así lo dio a conocer la compañía organizadora del evento Sights Concerts. Tiago Uriel Pacheco Lescano tiene 22 años y desde los 15 su talento lo hizo resaltar del talento que participaba en las batallas de trap.</p>
+                <button class="announcement-buy" id="but-buy">
+                    Comprar con BankPatata
+                </button>
+                <button class="announcement-back" id="but-back">
+                    Volver
+                </button>
             </div>
         </div>
-
-        <div class="announcement-buy" id="but-buy">
-            <div class="announcement-details">
-                <h2>Comprar con BankPatata</h2>
-            </div>
         </div>
-
-        <div class="announcement-back" id="but-back">
-            <div class="announcement-details">
-                <h2>Volver</h2>
-            </div>
-        </div>
-
-    </div>
     
-
+<!--
     <footer>
         <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
     </footer>
-
+-->
     <script>
         let myWindow;
-        const purchaseEnabled = true
 
     function openWin() {
-        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=50&description=RUMIÑAHUI-ARENA_tiagopzk", "_blank", "width=700, height=700");
+        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=50&description=RUMIÑAHUI-ARENA-TiagoPZKConcierto", "_blank", "width=700, height=700");
     }
 
     function closeWin() {
@@ -176,14 +51,26 @@
         }
        const buyBankPatata = document.getElementById("but-buy");
        const back = document.getElementById("but-back");
+       let allowed = "true"
         // Añadir event listener para el clic en el anuncio temporal
         
         buyBankPatata.addEventListener('click', () => {
-            if (window.closed === false) {
+            /*if (window.closed === false) {
                 openWin()
             } else {
                 closeWin()
+            }*/
+           if (allowed == "true") {
+            openWin()
+            allowed = "false"
+           } else {
+            if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
+                closeWin()
+                allowed = "true"
+            } else {
+                return;
             }
+           }
 
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
