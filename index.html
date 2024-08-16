@@ -37,7 +37,7 @@
         <!-- Espacios invisibles para anuncios temporales -->
         <div id="announcement-placeholder-1" class="announcement hidden"></div>
         <div id="announcement-placeholder-2" class="announcement hidden"></div>
-        <div id="announcement-placeholder-3" class="announcement hidden"></div>
+        <!-- <div id="announcement-placeholder-3" class="announcement hidden"></div> -->
         
     </div>
 </div>
@@ -52,7 +52,7 @@
         // JavaScript para manejar anuncios temporales
         const placeholder1 = document.getElementById('announcement-placeholder-1');
         const placeholder2 = document.getElementById('announcement-placeholder-2');
-        const placeholder3 = document.getElementById('announcement-placeholder-3');
+       // const placeholder3 = document.getElementById('announcement-placeholder-3');
 
         // Función para mostrar un anuncio temporal
         function showTemporaryAnnouncement(placeholder, imgSrc, name, date, time, price) {
@@ -85,10 +85,11 @@
             window.location.href = "./feid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
-        placeholder3.addEventListener('click', () => {
+        /*placeholder3.addEventListener('click', () => {
             window.location.href = "./madrid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
+        */
     </script>
 </body>
 </html>
