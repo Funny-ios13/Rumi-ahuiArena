@@ -37,7 +37,7 @@
         <!-- Espacios invisibles para anuncios temporales -->
         <div id="announcement-placeholder-1" class="announcement hidden"></div>
         <div id="announcement-placeholder-2" class="announcement hidden"></div>
-        <!-- <div id="announcement-placeholder-3" class="announcement hidden"></div> -->
+        <div id="announcement-placeholder-3" class="announcement hidden"></div>
         
     </div>
 </div>
@@ -52,7 +52,7 @@
         // JavaScript para manejar anuncios temporales
         const placeholder1 = document.getElementById('announcement-placeholder-1');
         const placeholder2 = document.getElementById('announcement-placeholder-2');
-       // const placeholder3 = document.getElementById('announcement-placeholder-3');
+        const placeholder3 = document.getElementById('announcement-placeholder-3');
 
         // Función para mostrar un anuncio temporal
         function showTemporaryAnnouncement(placeholder, imgSrc, name, date, time, price) {
@@ -72,7 +72,7 @@
         setTimeout(() => {
             showTemporaryAnnouncement(placeholder1, 'images/tiago.png', 'TIAGO PZK | GOTIA TOUR', '18 de Septiembre, 2024', '9:00 PM', '$50');
             showTemporaryAnnouncement(placeholder2, 'images/feid.png', 'FEID | FERXXOCALIPSIS TOUR', '10 de Septiembre, 2024', '5:00 PM', '$150');
-            //showTemporaryAnnouncement(placeholder3, 'images/final.png', 'UEFA Super Cup - Final', '14 de Agosto, 2024', '2:00 PM', '$299.99');
+            showTemporaryAnnouncement(placeholder3, 'images/final.png', 'LALIGA *Real Madrid vs Real Valladolid*', '25 de Agosto, 2024', '2:00 PM', '$59.99');
         }, 1); // Mostrar anuncios temporales después de 2 segundos
 
         // Añadir event listener para el clic en el anuncio temporal
@@ -85,11 +85,10 @@
             window.location.href = "./feid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
-        /*placeholder3.addEventListener('click', () => {
+        placeholder3.addEventListener('click', () => {
             window.location.href = "./madrid.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
-        */
     </script>
 </body>
 </html>
