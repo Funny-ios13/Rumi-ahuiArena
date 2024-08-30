@@ -14,10 +14,10 @@
     <div class="container announcement-container">
         
         <div class="announcement">
-            <img src="images/Laliga6.png">
+            <img src="images/laliga7.png">
             <div class="announcement-details">
-                <h2>LALIGA | RMA vs UDL</h2>
-                <p>Fecha: 29 de Agosto, 2024</p>
+                <h2>LALIGA | RMA vs RBS</h2>
+                <p>Fecha: 1 de Septiembre, 2024</p>
                 <p>Hora: 2:30 PM</p>
                 <p class="price">Precio: $39.99</p>
                 
@@ -60,7 +60,7 @@
         let myWindow;
 
     function openWin() {
-        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=39.99&description=LALIGA PARTIDO #6000 (RealMadrid vs UD.LasPalmas)", "_blank", "width=700, height=700");
+        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RumiñahuiArena&price=39.99&description=LALIGA PARTIDO #7000 (RealMadrid vs RealBetis)", "_blank", "width=700, height=700");
     }
 
     function closeWin() {
@@ -72,11 +72,16 @@
         // Añadir event listener para el clic en el anuncio temporal
         
         buyBankPatata.addEventListener('click', () => {
-            /*if (window.closed === false) {
+            if (window.closed === false) {
                 openWin()
             } else {
+                if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
                 closeWin()
-            }*/
+                allowed = "true"
+            } else {
+                return;
+            }
+            /*
            if (allowed == "true") {
             openWin()
             allowed = "false"
@@ -87,6 +92,8 @@
             } else {
                 return;
             }
+               */
+               
            }
 
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
