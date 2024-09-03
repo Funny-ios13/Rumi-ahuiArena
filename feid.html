@@ -72,23 +72,15 @@
         // Añadir event listener para el clic en el anuncio temporal
         
         buyBankPatata.addEventListener('click', () => {
-            /*if (window.closed === false) {
+            if (myWindow.closed === false) {
                 openWin()
             } else {
-                closeWin()
-            }*/
-           if (allowed == "true") {
-            openWin()
-            allowed = "false"
-           } else {
-            if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
+                if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
                 closeWin()
                 allowed = "true"
             } else {
                 return;
             }
-           }
-
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
         back.addEventListener('click', () => {
