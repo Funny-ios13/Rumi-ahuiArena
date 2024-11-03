@@ -17,16 +17,20 @@
             <img src="images/Laliga10.png">
             <div class="announcement-details">
                 <h2>LALIGA | RMA vs VAL (*10000)</h2>
-                <p>Fecha: 2 de Noviembre, 2024</p>
-                <p>Hora: 3:00 PM</p>
-                <p class="price">Precio: $39.99</p>
+                <p>Fecha: ?? de ????????? del ????</p>
+                <p>Hora: ??:?? PM</p>
+                <p class="price">Precio: $29.99  |  -15% OFF</p>
                 
                 <hr>
+                <br>
+                <p>Este evento a sido <b>SUSPENDIDO</b> debido a los desastres naturales que ocurrieron en España, Valencia.</p>
+                <p>De momento no sabemos cuando será la fecha nueva del evento./p>
+                <p>Lamentamos las molestias.</p>
                 <br>
                 <p>LALIGA | *Real Madrid* vs *Valencia* | es traido a ti <br><i>gracias a : <b>BankPatata</b></i></p>
                 <br>
              <!--   <p>Este evento a terminado y no puedes reservarlo ahora.</p>-->
-                <button class="announcement-buy" id="but-buy">
+                <button class="announcement-buy" disabled id="but-buy">
                     Comprar con BankPatata
                 </button>
                 <button class="announcement-back" id="but-back">
@@ -62,7 +66,7 @@
         let myWindow;
 
     function openWin() {
-        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RuminahuiArena&price=39.99&description=LALIGA*10000", "_blank", "width=700, height=700");
+        myWindow = window.open("https://paybankpatata.mcpatatacountry.com?store=RuminahuiArena&price=29.99&description=LALIGA*10000", "_blank", "width=700, height=700");
     }
 
     function closeWin() {
@@ -75,7 +79,8 @@
         
         buyBankPatata.addEventListener('click', () => {
             if (window.closed === false) {
-                openWin()
+                alert("Este evento no puede ser reservado.");
+                ////////////////////////************************//openWin()
             } else {
                 if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
                 closeWin()
