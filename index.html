@@ -38,7 +38,7 @@
         <div id="announcement-placeholder-1" class="announcement hidden"></div>
         <div id="announcement-placeholder-2" class="announcement hidden"></div>
         <div id="announcement-placeholder-3" class="announcement hidden"></div>
-        
+        <div id="announcement-placeholder-4" class="announcement hidden"></div>
     </div>
 </div>
     <!--
@@ -53,6 +53,7 @@
         const placeholder1 = document.getElementById('announcement-placeholder-1');
         const placeholder2 = document.getElementById('announcement-placeholder-2');
         const placeholder3 = document.getElementById('announcement-placeholder-3');
+        const placeholder4 = document.getElementById('announcement-placeholder-4');
 
         // Función para mostrar un anuncio temporal
         function showTemporaryAnnouncement(placeholder, imgSrc, name, date, time, price) {
@@ -73,7 +74,8 @@
             showTemporaryAnnouncement(placeholder1, 'images/Young4500.png', 'YOUNG MIKO | xoxo 2024 TOUR', '8 de Noviembre, 2024', '8:00 PM', '$200');
             showTemporaryAnnouncement(placeholder2, 'images/BankPatata.png', 'FEID | FERXXOCALIPSIS TOUR', '6 de Diciembre, 2024', '9:45 PM', '$150');
             showTemporaryAnnouncement(placeholder3, 'images/Laliga10.png', '-15% OFF | LALIGA *Real Madrid vs Valencia*', '? de ?????????, 2024', '?:?? PM', '$29.99');
-        }, 1); // Mostrar anuncios temporales después de 2 segundos
+            showTemporaryAnnouncement(placeholder2, 'images/BankPatata.png', '-25% OFF | UEFA Champions League *Real Madrid vs Liverpool*', '27 de Noviembre, 2024', '3:00 PM', '$19.99');
+        }, 0); // Mostrar anuncios temporales después de 2 segundos
 
         // Añadir event listener para el clic en el anuncio temporal
         placeholder1.addEventListener('click', () => {
@@ -87,6 +89,10 @@
         });
         placeholder3.addEventListener('click', () => {
             window.location.href = "./madrid.html"
+            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+        });
+        placeholder3.addEventListener('click', () => {
+            window.location.href = "./madrid2.html"
             // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
         });
     </script>
