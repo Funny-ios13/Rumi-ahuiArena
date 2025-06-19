@@ -3,97 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rumiñahui Arena</title>
+    <title>Rumiñahui Arena - Eventos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="images/logo2.png" class="logo-header">
+        <img src="https://i.imgur.com/Qk9S2d9.png" alt="Logo Rumiñahui Arena" class="logo-header">
     </header>
 
-    <div class="container announcement-container homepage">
-    <div class="container">
-        <!--
-        <div class="announcement">
-            <img src="https://via.placeholder.com/150" alt="Evento 1">
-            <div class="announcement-details">
-                <h2>Nombre del Evento 1</h2>
-                <p>Fecha: 12 de Junio, 2024</p>
-                <p>Hora: 8:00 PM</p>
-                <p class="price">Precio: $50</p>
+    <main class="page-container">
+        <div class="events-grid" id="events-grid">
             </div>
-        </div>
-
-        <div class="announcement">
-            <img src="https://via.placeholder.com/150" alt="Evento 2">
-            <div class="announcement-details">
-                <h2>Nombre del Evento 2</h2>
-                <p>Fecha: 19 de Junio, 2024</p>
-                <p>Hora: 7:00 PM</p>
-                <p class="price">Precio: $60</p>
-            </div>
-        </div>
-    -->
-        <!-- Espacios invisibles para anuncios temporales -->
-        <div id="announcement-placeholder-1" class="announcement hidden"></div>
-        <div id="announcement-placeholder-2" class="announcement hidden"></div>
-        <div id="announcement-placeholder-3" class="announcement hidden"></div>
-        <div id="announcement-placeholder-4" class="announcement hidden"></div>
-    </div>
-</div>
-    <!--
-    <footer>
-        <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
-    </footer>
--->
-
+    </main>
 
     <script>
-        // JavaScript para manejar anuncios temporales
-        const placeholder1 = document.getElementById('announcement-placeholder-1');
-        const placeholder2 = document.getElementById('announcement-placeholder-2');
-        const placeholder3 = document.getElementById('announcement-placeholder-3');
-        const placeholder4 = document.getElementById('announcement-placeholder-4');
+        document.addEventListener('DOMContentLoaded', () => {
+            const eventsGrid = document.getElementById('events-grid');
+            
+            const events = [
+                {
+                    id: 'young',
+                    imgSrc: 'https://i.imgur.com/w8N5gSq.png',
+                    name: 'YOUNG MIKO | xoxo 2024 TOUR',
+                    date: '8 de Noviembre, 2024',
+                    time: '8:00 PM',
+                    price: '$200',
+                    url: './young.html'
+                },
+                {
+                    id: 'feid',
+                    imgSrc: 'https://i.imgur.com/i0WNypp.png',
+                    name: 'FEID | FERXXOCALIPSIS TOUR',
+                    date: '6 de Diciembre, 2024',
+                    time: '9:45 PM',
+                    price: '$150',
+                    url: './feid.html'
+                },
+                 {
+                    id: 'madrid2',
+                    imgSrc: 'https://i.imgur.com/kPFLT7K.jpg',
+                    name: 'FIFA Club World Cup | Real Madrid vs Al Hilal',
+                    date: '18 de Junio, 2025',
+                    time: '15:00 PM',
+                    price: 'Ver en Sitio',
+                    url: './madrid2.html'
+                },
+                {
+                    id: 'madrid',
+                    imgSrc: 'https://i.imgur.com/PUNL4eA.png',
+                    name: '-15% OFF | LALIGA *Real Madrid vs Valencia*',
+                    date: 'Fecha Pospuesta',
+                    time: 'Hora por confirmar',
+                    price: '$29.99',
+                    url: './madrid.html'
+                }
+            ];
 
-        // Función para mostrar un anuncio temporal
-        function showTemporaryAnnouncement(placeholder, imgSrc, name, date, time, price) {
-            placeholder.classList.remove('hidden');
-            placeholder.innerHTML = `
-                <img src="${imgSrc}" alt="${name} (logo)">
-                <div class="announcement-details">
-                    <h2>${name}</h2>
-                    <p>Fecha: ${date}</p>
-                    <p>Hora: ${time}</p>
-                    <p class="price">Precio: ${price}</p>
-                </div>
-            `;
-        }
-
-        // Ejemplo de cómo llamar a la función para mostrar un anuncio temporal
-        setTimeout(() => {
-            showTemporaryAnnouncement(placeholder4, 'images/Young4500.png', 'YOUNG MIKO | xoxo 2024 TOUR', '8 de Noviembre, 2024', '8:00 PM', '$200');
-            showTemporaryAnnouncement(placeholder2, 'images/BankPatata.png', 'FEID | FERXXOCALIPSIS TOUR', '6 de Diciembre, 2024', '9:45 PM', '$150');
-            showTemporaryAnnouncement(placeholder3, 'images/Laliga10.png', '-15% OFF | LALIGA *Real Madrid vs Valencia*', '? de ?????????, 2024', '?:?? PM', '$29.99');
-            showTemporaryAnnouncement(placeholder1, 'images/FIFA13000.jpg', 'FIFA Club World Cup | *Real Madrid vs Al Hilal*', '18 de Junio, 2025', '15:00 PM', '$???.??');
-        }, 0); // Mostrar anuncios temporales después de 2 segundos
-
-        // Añadir event listener para el clic en el anuncio temporal
-        placeholder4.addEventListener('click', () => {
-            window.location.href = "./young.html"
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
-        });
-
-        placeholder2.addEventListener('click', () => {
-            window.location.href = "./feid.html"
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
-        });
-        placeholder3.addEventListener('click', () => {
-            window.location.href = "./madrid.html"
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
-        });
-        placeholder1.addEventListener('click', () => {
-            window.location.href = "./madrid2.html"
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+            events.forEach((event, index) => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.style.animationDelay = `${index * 100}ms`;
+                card.innerHTML = `
+                    <img src="${event.imgSrc}" alt="Imagen del evento ${event.name}">
+                    <div class="event-card-details">
+                        <h2>${event.name}</h2>
+                        <p>${event.date} - ${event.time}</p>
+                        <p class="price">${event.price}</p>
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    window.location.href = event.url;
+                });
+                eventsGrid.appendChild(card);
+            });
         });
     </script>
 </body>
