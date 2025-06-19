@@ -1,118 +1,227 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #120318, #240530);
-    color: white;
+/* --- Estilos Globales y Tipografía --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #ff4081; /* Un rosa vibrante para los acentos */
+    --secondary-color: #3f51b5; /* Un índigo profundo para fondos y elementos */
+    --dark-color: #1a1a2e; /* Color de fondo principal, azul noche oscuro */
+    --light-color: #e0e0e0;
+    --white-color: #ffffff;
+    --card-bg-color: rgba(42, 42, 66, 0.8);
+    --success-color: #00e676;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    background-image: linear-gradient(45deg, var(--dark-color) 0%, #16222A 100%);
+    overflow-x: hidden;
+}
+
+/* --- Encabezado --- */
 header {
-    width: 100%;
-    background-color: black; /* Más impacto visual para el logo */
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
+    padding: 20px 0;
     text-align: center;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .logo-header {
-    width: 30%; /* Ajuste para que el logo sea más estrecho y cubra el encabezado */
-    height: 180px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 80vh;
-}
-
-.announcement {
-    display: flex;
-    flex-direction: row; /* Cambia de columna a fila */
-    align-items: center; /* Alinea verticalmente */
-    justify-content: start; /* Alinea los elementos al inicio del contenedor */
-    padding: 20px;
-    margin: 20px 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    width: 100%; /* Ajusta según el tamaño deseado */
-}
-
-.announcement img {
-    width: 30%; /* Tamaño de la imagen */
+    max-width: 250px;
     height: auto;
-    border-radius: 10px;
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-.announcement-details {
-    flex: 1; /* Ocupa el espacio restante */
-    
+/* --- Contenedor Principal --- */
+.page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-.announcement:hover {
-   
-    background: rgba(255, 255, 255, 0.242);; /* Fondo semi-transparente */
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
-
-.announcement h2, .announcement p, .announcement .price {
-    margin: 5px 0;
+/* --- Estilo de Tarjetas de Eventos (Homepage) --- */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-
-.announcement .price {
-    color: #4CAF50;
-    font-weight: bold;
-}
-
-.announcement-buy {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    color: white;
+.event-card {
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: popIn 0.5s forwards;
 }
 
-.announcement-buy:hover {
-    background-color: #45a049;
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 64, 129, 0.3);
 }
 
-.announcement-back {
-    padding: 8px 16px;
-    background-color: #cd2f2f;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin-top: 8px;
-}
-
-.announcement-back:hover {
-    background-color: #a72626b9;
-}
-
-/*footer {
-    text-align: center;
-    padding: 0px;
-    background-color: black;
-    color: white;
-    position: fixed;
-    bottom: 0;
+.event-card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
 }
-*/
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
+
+.event-card-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card-details h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.event-card-details p {
+    margin-bottom: 8px;
+    color: var(--light-color);
+    flex-grow: 1;
+}
+
+.event-card-details .price {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--success-color);
+    text-align: right;
+    margin-top: 15px;
+}
+
+/* --- Página de Detalles del Evento --- */
+.event-detail-container {
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.event-detail-container img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+.event-detail-info {
+    flex: 1;
+}
+
+.event-detail-info h2 {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.event-detail-info p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.event-detail-info .price {
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--success-color);
+    margin: 20px 0;
+}
+
+.event-detail-info hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 25px 0;
+}
+
+/* --- Botones --- */
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn-primary:hover {
+    background-color: #ff79b0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+}
+.btn-primary:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--light-color);
+}
+.btn-secondary:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* --- Animaciones y Responsividad --- */
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+    .event-detail-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
-    .announcement {
-        width: 90%; /* Más adaptable a pantallas más pequeñas */
+    .event-detail-info h2 {
+        font-size: 2em;
+    }
+    .button-group {
+        flex-direction: column;
     }
 }
