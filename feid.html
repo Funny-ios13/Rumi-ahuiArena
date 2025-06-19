@@ -3,100 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rumiñahui Arena</title>
+    <title>FEID | FERXXOCALIPSIS TOUR - Rumiñahui Arena</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="images/logo2.png" class="logo-header">
+        <img src="https://i.imgur.com/Qk9S2d9.png" alt="Logo Rumiñahui Arena" class="logo-header">
     </header>
 
-    <div class="container announcement-container">
-        
-        <div class="announcement">
-            <img src="images/BankPatata.png">
-            <div class="announcement-details">
+    <main class="page-container">
+        <div class="event-detail-container">
+            <img src="https://i.imgur.com/i0WNypp.png" alt="Flyer de FEID">
+            <div class="event-detail-info">
                 <h2>FEID | FERXXOCALIPSIS TOUR (*3500)</h2>
-                <p>Fecha: 6 de Diciembre, 2024</p>
-                <p>Hora: 9:45 PM</p>
-                <p class="price">Precio: $150</p>
-                
+                <p><strong>Fecha:</strong> 6 de Diciembre, 2024</p>
+                <p><strong>Hora:</strong> 9:45 PM</p>
+                <p class="price">$150</p>
                 <hr>
-                <br>
-                <p>Ferxxo tambien conocido por Feid se acaba de embarcar en su siguiente gira mundial y <i><b>Medellín</b>, Patata Country</i> es parte de su itinerario. Así lo dio a conocer la compañía organizadora del evento Sights Concerts. Feid desde hace 10 años empezo con la carrera musical. Su fama y exito lo ha llevado a convertirse en uno de los mejores artistas de reggueton.</p>
-                <button class="announcement-buy" id="but-buy">
-                    Comprar con BankPatata
-                </button>
-                <button class="announcement-back" id="but-back">
-                    Volver
-                </button>
+                <p>Ferxxo, también conocido como Feid, se embarca en su siguiente gira mundial y <i><b>Medellín</b>, Patata Country</i> es parte de su itinerario. Así lo dio a conocer la compañía organizadora Sights Concerts. Feid, con 10 años de carrera, se ha convertido en uno de los mayores exponentes del reguetón mundial.</p>
+                
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="btn-back">Volver</button>
+                    <button class="btn btn-primary" id="btn-buy">Comprar con BankPatata</button>
+                </div>
             </div>
         </div>
-
-        <!--<div class="announcement-buy" id="but-buy">
-            <div class="announcement-details">
-                <h2>Comprar con BankPatata</h2>
-            </div>
-        </div>
-        
-
-        <div class="announcement-back" id="but-back">
-            <div class="announcement-details">
-                <h2>Volver</h2>
-            </div>
-        -->
-        </div>
-
-    </div>
-    
-
- <!--
-    <footer>
-        <p>&copy; 2024 Rumiñahui Arena. Todos los derechos reservados.</p>
-    </footer>
--->
+    </main>
 
     <script>
-        let myWindow;
+        document.addEventListener('DOMContentLoaded', () => {
+            const buyButton = document.getElementById('btn-buy');
+            const backButton = document.getElementById('btn-back');
+            
+            // --- DATOS DEL EVENTO ---
+            const eventData = {
+                url: "https://funny-ios13.github.io/paybankpatata/?store=RuminahuiArena&price=150&description=Concierto*3500",
+                name: "FEID | FERXXOCALIPSIS TOUR"
+            };
 
-    function openWin() {
-        myWindow = window.open("https://funny-ios13.github.io/paybankpatata/?store=RuminahuiArena&price=150&description=Concierto*3500", "_blank", "width=700, height=700");
-    }
+            let purchaseWindow = null;
 
-    function closeWin() {
-        myWindow.close();
-        }
-       const buyBankPatata = document.getElementById("but-buy");
-       const back = document.getElementById("but-back");
-       let allowed = "true"
-        // Añadir event listener para el clic en el anuncio temporal
-        
-        buyBankPatata.addEventListener('click', () => {
-            /*if (window.closed === false) {
-                openWin()
-            } else {
-                closeWin()
-            }*/
-           if (allowed == "true") {
-            openWin()
-            allowed = "false"
-           } else {
-            if (confirm("Tienes una compra en progreso.\n¿Deseas abandonarla?") == true) {
-                closeWin()
-                allowed = "true"
-            } else {
-                return;
-            }
-           }
+            buyButton.addEventListener('click', () => {
+                // Comprueba si la ventana ya está abierta y no ha sido cerrada por el usuario
+                if (purchaseWindow && !purchaseWindow.closed) {
+                    alert(`Ya tienes una ventana de compra abierta para el evento:\n"${eventData.name}".\n\nPor favor, completa o cierra esa compra antes de iniciar una nueva.`);
+                    purchaseWindow.focus(); // Trae la ventana de compra al frente
+                } else {
+                    // Abre una nueva ventana de compra
+                    purchaseWindow = window.open(eventData.url, "_blank", "width=600,height=750,scrollbars=yes,resizable=yes");
+                }
+            });
 
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
+            backButton.addEventListener('click', () => {
+                window.location.href = "./index.html";
+            });
         });
-        back.addEventListener('click', () => {
-            window.location.href = "./index.html"
-            // Aquí puedes añadir la lógica adicional que necesites para manejar el clic en el anuncio
-        });
-
-        
     </script>
 </body>
 </html>
